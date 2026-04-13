@@ -2,20 +2,10 @@ from quiz_list import *
 import copy
 import random
 import time
-import threading
-import time
 from inputimeout import inputimeout, TimeoutOccurred
+
 # Create a quiz game to test how much you know about programming.
-# Prompt the user with multiple choice answers.
-# If the user gets a correct answer then add 1 to a count variable
-# To get the % of correct answers, divide the count by the length of questions
-# Use quiz questions from popular sites for python
-# At the end introduce the user to an answer sheet
-# If they want to check the answer sheet, it will have full explanations
 # SOURCE URL https://www.w3schools.com/quiztest/quiztest.asp?qtest=PYTHON
-
-
-# Return number of thread objects currently active
 
 
 
@@ -31,7 +21,7 @@ Needs to add some robustness for error handling
 
 # Time limit of 30 seconds for the user to answer each question
 TIME_LIMIT = 30
-# List of valid integers to continue and refresh the timer.
+
 
 
 
@@ -72,7 +62,7 @@ def main():
         continue.
 
         We need to add robustness so that questions aren't skipped.
-        
+
         
         '''
         try:
@@ -115,7 +105,8 @@ def main():
         if user_check == "Y":
             for q in quiz_copy:
                 print("\n"+q["question"])
-                print("\n"+q["answer"])
+                print("-------------------")
+                print(q["answer"])
             break
 
         elif user_check == "N":
